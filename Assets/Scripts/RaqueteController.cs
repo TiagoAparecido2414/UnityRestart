@@ -7,6 +7,7 @@ public class RaqueteController : MonoBehaviour
     //O meu Vector 3
     private Vector3 minhaPosicao;
     public float meuY;
+    public float speed = 5f;
 
     void Start()
     {
@@ -26,13 +27,13 @@ public class RaqueteController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             //Almentar o valor do meuY
-            meuY = meuY + 0.01f;
+            meuY = meuY + speed * Time.deltaTime;
         }
         //Pegando a seta para baixo
         if (Input.GetKey(KeyCode.DownArrow))
         {
             //Diminuindo o valor do meuY
-            meuY = meuY - 0.01f;
+            meuY = meuY - speed * Time.deltaTime;
 
         }
 
