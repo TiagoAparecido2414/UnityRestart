@@ -8,6 +8,7 @@ public class RaqueteController : MonoBehaviour
     private Vector3 minhaPosicao;
     public float meuY;
     public float speed = 5f;
+    private float meuLimete = 3.5f;
 
     void Start()
     {
@@ -24,17 +25,25 @@ public class RaqueteController : MonoBehaviour
 
         //pegando a seta para cima
         //Se eu aperta a seta pra cima ele vai subir a raquete
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W))
         {
-            //Almentar o valor do meuY
-            meuY = meuY + speed * Time.deltaTime;
+            //Checar se o meu valor e menor q meu limete
+            if (meuY < meuLimete)
+            {
+                //Almentar o valor do meuY Apenas se for menor q meuLimete
+                //Almentar o valor do meuY
+                meuY = meuY + speed * Time.deltaTime;
+            }   
         }
         //Pegando a seta para baixo
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S))
         {
-            //Diminuindo o valor do meuY
-            meuY = meuY - speed * Time.deltaTime;
-
+            if (meuY > -meuLimete)
+            {
+                //Almentar o valor do meuY Apenas se for maior q -meuLimete
+                //Diminuindo o valor do meuY
+                meuY = meuY - speed * Time.deltaTime;
+            }
         }
 
 
