@@ -11,10 +11,29 @@ public class BolaController : MonoBehaviour
 
     void Start()
     {
+        //Valor aleatorio
+        int direcao = Random.Range(0, 4);
         //Passando mnha velocidade para minha velocidade
-        minhaVelocidae.x = -velocidade;
-        minhaVelocidae.y = -velocidade;
-        //Adicionando velocidade para esquerda
+        if (direcao == 1)// Superior a esquerda
+        {
+            minhaVelocidae.y = velocidade;
+            minhaVelocidae.x = velocidade;
+        }
+        else if (direcao == 3) // inferior a direita
+        {
+            minhaVelocidae.y = -velocidade;
+            minhaVelocidae.x = velocidade;
+        }
+        else if (direcao == 2) // Inferior a esquerda
+        {
+            minhaVelocidae.y = -velocidade;
+            minhaVelocidae.x = -velocidade;
+        }
+        else // superior a direita
+        {
+            minhaVelocidae.y = velocidade;
+            minhaVelocidae.x = -velocidade;
+        }
         meuRB.velocity = minhaVelocidae;
 
     }
