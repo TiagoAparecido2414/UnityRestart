@@ -6,7 +6,7 @@ public class RaqueteController : MonoBehaviour
 {
     //O meu Vector 3
     private Vector3 minhaPosicao;
-    public float meuY;
+    private float meuY;
     public float speed = 5f;
     private float meuLimete = 3.5f;
 
